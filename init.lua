@@ -1,3 +1,4 @@
+
 --[[
 
 =====================================================================
@@ -24,7 +25,7 @@ Kickstart Guide:
 
 I have left several `:help X` comments throughout the init.lua
 You should run that command and read that help section for more information.
-
+test
 In addition, I have some `NOTE:` items throughout the file.
 These are for you, the reader to help understand what is happening. Feel free to delete
 them once you know what you're doing, but they should serve as a guide for when you
@@ -138,6 +139,14 @@ require('lazy').setup({
     end,
   },
 
+
+  -- Comment toggling plugin 
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+    lazy = false,
+  },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -209,6 +218,10 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Set tab preferences
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Displays line numbers as relative to current line number
 vim.wo.relativenumber = true
 
@@ -257,8 +270,8 @@ vim.o.termguicolors = true
 local opts = { noremap = true, silent = true }
 
 -- Allows Enter to Create New Spaces without leaving normal mode
-vim.api.nvim_set_keymap('n', '<CR>', 'i<CR><Esc>', opts)
-vim.api.nvim_set_keymap('n', '<S-CR>', 'O<Esc>', {noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<CR>', 'i<CR><Esc>', opts)
+-- vim.api.nvim_set_keymap('n', '<S-CR>', 'O<Esc>', {noremap = true, silent = true })
 
 -- Disable arrow keys in normal mode
 vim.api.nvim_set_keymap('n', '<Up>', '<Nop>', { noremap = true, silent = true })
